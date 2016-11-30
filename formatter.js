@@ -22,10 +22,18 @@ var render = function(){
   final[lang]['language'] = dropdown.selectedOptions[0].text;
 
   final[lang]["translator"] = document.getElementById('translator').value.replace(/[\"]/g, "\\\"");
-  var unique1 = document.getElementById('unique1').value.replace(/[\"]/g, "\\\"") + "\n" + "<br/><br/>";
-  var unique2 = document.getElementById('unique2').value.replace(/[\"]/g, "\\\"") + "<br/><br/>";
-  var unique3 = document.getElementById('unique3').value.replace(/[\"]/g, "\\\"") + "<br/>";
-  final[lang]["unique"] = unique1 + unique2 + unique3;
+  var uniques = document.getElementsByClassName('uniqueInput');
+  var uniquesJoined = "";
+  for(var i = 0; i < uniques.length; i++){
+   if(i = 0){
+     uniquesJoined += uniques[i] + "\n" + "<br/><br/>";
+   } else if (i = uniques.length - 1) {
+     uniquesJoined += uniques[i] + "<br/>";
+   } else {
+     uniquesJoined += uniques[i] + "<br/><br/>";
+   }
+  }
+  final[lang]["unique"] = uniquesJoined;
 
   var link = document.getElementById('link').value.replace(/[\"]/g, "\\\"") + "\n" + "<br/>";
   var age = document.getElementById('age').value.replace(/[\"]/g, "\\\"") + "\n" + "<br/>";
