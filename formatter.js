@@ -26,11 +26,11 @@ var render = function(){
   var uniquesJoined = "";
   for(var i = 0; i < uniques.length; i++){
    if(i = 0){
-     uniquesJoined += uniques[i].innerHTML + "\n" + "<br/><br/>";
+     uniquesJoined += uniques[i].text + "\n" + "<br/><br/>";
    } else if (i = uniques.length - 1) {
-     uniquesJoined += uniques[i].innerHTML + "<br/>";
+     uniquesJoined += uniques[i].text + "<br/>";
    } else {
-     uniquesJoined += uniques[i].innerHTML + "<br/><br/>";
+     uniquesJoined += uniques[i].text + "<br/><br/>";
    }
   }
   final[lang]["unique"] = uniquesJoined;
