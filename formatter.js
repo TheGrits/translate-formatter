@@ -25,12 +25,13 @@ var render = function(){
   var uniques = document.getElementsByClassName('uniqueInput');
   var uniquesJoined = "";
   for(var i = 0; i < uniques.length; i++){
-   if(i = 0){
-     uniquesJoined += uniques[i].text + "\n" + "<br/><br/>";
-   } else if (i = uniques.length - 1) {
-     uniquesJoined += uniques[i].text + "<br/>";
-   } else {
-     uniquesJoined += uniques[i].text + "<br/><br/>";
+   var value = uniques[i].value;
+   if(i = 0){ // first one
+     uniquesJoined += value + "\n" + "<br/><br/>";
+   } else if (i = uniques.length - 1) { // last one
+     uniquesJoined += value + "<br/>";
+   } else { // everything else
+     uniquesJoined += value + "<br/><br/>";
    }
   }
   final[lang]["unique"] = uniquesJoined;
